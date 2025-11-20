@@ -1,14 +1,23 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	// "time"
+
+	"github.com/gin-gonic/gin"
+	// "github.com/jackc/pgx/v5"
+	// "net/http"
+	"github.com/BimoAtaullahR/penugasan-backend/config"
+	"github.com/BimoAtaullahR/penugasan-backend/models"
+	"github.com/BimoAtaullahR/penugasan-backend/controllers"
+) 
 
 func main(){
-	router := gin.Default()
-	router.GET("/ping", func(ctx *gin.Context) {
-		ctx.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
+	database.ConnectDatabase()
+	database.DB.AutoMigrate(&models.User{})
+	r := gin.Default()
 
-	router.Run()
+	r.POST("/register", controllers.Register)
+	r.POST("/login", controllers.Login)
+	r.Run()
+	// router.Run()
 }
