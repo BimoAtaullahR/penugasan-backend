@@ -12,7 +12,10 @@ import (
 	"github.com/BimoAtaullahR/penugasan-backend/middleware"
 ) 
 
-func main(){
+var r *gin.Engine
+
+//dijalankan terlebih dahulu secara otomatis baik di vercel ataupun di local
+func init(){
 	database.ConnectDatabase()
 	database.DB.AutoMigrate(&models.User{})
 	r := gin.Default()
@@ -34,7 +37,15 @@ func main(){
 			"user": user,
 		})
 	})
+}
 
+//untuk vercel
+func Handler(w http.ResponseWriter, req *http.Request){
+	r.ServeHTTP(w, req)
+}
+
+//fungsi untuk ketika menjalankannya di local
+func main(){
 	r.Run()
 	// router.Run()
 }
