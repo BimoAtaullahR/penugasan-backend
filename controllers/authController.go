@@ -14,7 +14,7 @@ import (
 
 type RegisterInput struct{
 	Email string `json:"email" binding:"required,email"`
-	Password string `json:"password" binding:"required,min==8"` //validasi minimal 8 karakter
+	Password string `json:"password" binding:"required,min=8"` //validasi minimal 8 karakter
 }
 
 type LoginInput struct{
