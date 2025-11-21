@@ -16,10 +16,14 @@ import (
 func RequireAuth(c *gin.Context){
 	//mendapatkan token dari Header HTTP
 	authHeader := c.GetHeader("Authorization")
-	tokenString := strings.Split(authHeader, "Bearer ")
+	tokenString := strings.Split(authHeader, " ")
+	if len(tokenString) != 2 || tokenString[0] != "Bearer"{
+		c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": "invalid authorization format"})
+		return 
+	}
 
 	//parse dan validasi token
-	token, err := jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error){
+	token, err := jwt.Parse(tokenString[1], func(token *jwt.Token) (interface{}, error){
 		//validasi algoritma enkripsi
 		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok{
 			return nil, fmt.Errorf("unexpected signing method: %v", token.Header["alg"])
@@ -36,11 +40,20 @@ func RequireAuth(c *gin.Context){
 			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": "token expired"})
 			return
 		}
+		//cari user di DB
+		userID := claims["sub"]
+		var user models.User
+		database.DB.First(&user, userID)
+		if userID==""{
+			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": "user invalid"})
+			return
+		}
 		
+		//attach ke request dan next
+		c.Set("user", user)
+		c.Next()
+	}else{
+		c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": "token invalid"})
 	}
-	userID := claims["sub"]
-
-	//cari user di DB
 	
-	//attach ke request dan next
 }

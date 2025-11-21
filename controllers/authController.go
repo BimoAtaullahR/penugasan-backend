@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"net/http"
-
+	"strconv"
 	"github.com/BimoAtaullahR/penugasan-backend/config"
 	"github.com/BimoAtaullahR/penugasan-backend/models"
 	"github.com/gin-gonic/gin"
@@ -77,8 +77,9 @@ func Login(c *gin.Context){
 	//generate JWT Token
 	//membuat payload atau isi data dalam token
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
-		"sub" : user.ID,								//subject: pemilik dari token ini (id user)
-		"exp" : time.Now().Add(time.Hour*24).Unix(),	//token kadaluarsa dalam 24 jam
+		//konversi user id yang berupa uint menjadi string
+		"sub" : strconv.FormatUint(uint64(user.ID), 10),	//subject: pemilik dari token ini (id user)
+		"exp" : time.Now().Add(time.Hour*24).Unix(),		//token kadaluarsa dalam 24 jam
 	})
 
 	//menandatangani token dengan secret key
