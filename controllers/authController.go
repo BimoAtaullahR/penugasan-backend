@@ -62,7 +62,7 @@ func Login(c *gin.Context){
 	var user models.User
 
 	//cari user di database berdasarkan email
-	if err := database.DB.Where("email: ?", input.Email).First(&user).Error; err != nil{
+	if err := database.DB.Where("email= ?", input.Email).First(&user).Error; err != nil{
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Email atau password salah"})
 		return
 	}

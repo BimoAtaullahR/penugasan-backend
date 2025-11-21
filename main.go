@@ -16,6 +16,6 @@ import (
 //fungsi untuk ketika menjalankannya di local
 func main(){
 	r := router.SetupRouter()
-	r.Run()
-	// router.Run()
+	r.Run(":7860")
+	
 }
