@@ -7,13 +7,10 @@ Ini adalah submission untuk penugasan Backend Division OmahTI 2025. Proyek ini a
 API ini sudah di-deploy dan dapat diakses secara publik menggunakan **Hugging Face Spaces (Docker)**.
 
 * **Base URL:** `https://bimoar-penugasan-backend.hf.space`
-    *(Ganti URL di atas dengan link Hugging Face kamu yang sebenarnya)*
-
-> **Catatan:** Jika Anda membuka link tersebut di browser, Anda mungkin melihat pesan `404 page not found`. Ini normal karena root path (`/`) tidak memiliki handler. Silakan tes endpoint spesifik di bawah ini menggunakan Postman.
 
 ## 📚 Cara Testing (Postman)
 
-File koleksi Postman (`Penugasan Backend OmahTi.postman_collection.json`) telah disertakan dalam repository ini.
+File koleksi Postman (`Penugasan Backend OmahTI.postman_collection.json`) telah disertakan dalam repository ini.
 
 **Langkah Testing:**
 1.  Download file `.json` postman dari repo ini.
