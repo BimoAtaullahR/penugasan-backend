@@ -45,6 +45,7 @@ func Register(c *gin.Context){
 
 	if err := database.DB.Create(&user).Error; err != nil{
 		c.JSON(http.StatusBadRequest, gin.H{"error" : "Gagal mendaftar, email mungkin sudah terdaftar sebelumnya"})
+		return
 	}
 
 	c.JSON(http.StatusOK, gin.H{"message" : "Registrasi berhasil!"})

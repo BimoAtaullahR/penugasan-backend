@@ -1,18 +1,13 @@
 package router
 
 import (
-	// "time"
-
 	"github.com/gin-gonic/gin"
-	// "github.com/jackc/pgx/v5"
 	"net/http"
 	"github.com/BimoAtaullahR/penugasan-backend/config"
 	"github.com/BimoAtaullahR/penugasan-backend/models"
 	"github.com/BimoAtaullahR/penugasan-backend/controllers"
 	"github.com/BimoAtaullahR/penugasan-backend/middleware"
 ) 
-
-var r *gin.Engine
 
 //setuprouter mengatur semua koneksi dan rute, dan mengembalikan *gin.engine
 func SetupRouter() *gin.Engine{
@@ -21,6 +16,14 @@ func SetupRouter() *gin.Engine{
 	r := gin.Default()
 
 	//public routes
+	// Rute Halaman Utama (Root)
+	r.GET("/", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"status":  "success",
+			"message": "Hai! API untuk penugasan OmahTI Backend sudah online dan siap menerima request.",
+			"version": "1.0.0",
+		})
+	})
 	r.POST("/register", controllers.Register)
 	r.POST("/login", controllers.Login)
 

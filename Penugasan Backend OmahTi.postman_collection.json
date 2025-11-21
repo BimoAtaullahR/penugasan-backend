@@ -1,0 +1,960 @@
+{
+	"info": {
+		"_postman_id": "5b4e5493-e7f7-4640-98b1-cccf55aa030f",
+		"name": "Penugasan Backend OmahTi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49785806",
+		"_collection_link": "https://bimoataullahr-1668745.postman.co/workspace/BimoAR's-Workspace~bc61bb95-c3f6-4f54-8f3b-94c0f8070684/collection/49785806-5b4e5493-e7f7-4640-98b1-cccf55aa030f?action=share&source=collection_link&creator=49785806"
+	},
+	"item": [
+		{
+			"name": "Positif (berhasil daftar)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"email\": \"penilai_{{$timestamp}}@omahti.com\",\r\n        \"password\": \"passwordKuat123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Positif (berhasil daftar)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"penilai_{{$timestamp}}@omahti.com\",\r\n        \"password\": \"passwordKuat123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 21 Nov 2025 13:34:11 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-proxied-host",
+							"value": "http://10.108.138.50"
+						},
+						{
+							"key": "x-proxied-replica",
+							"value": "ipeanxye-qnxs6"
+						},
+						{
+							"key": "x-proxied-path",
+							"value": "/register"
+						},
+						{
+							"key": "link",
+							"value": "<https://huggingface.co/spaces/bimoar/penugasan-backend>;rel=\"canonical\""
+						},
+						{
+							"key": "x-request-id",
+							"value": "uEGyhV"
+						},
+						{
+							"key": "vary",
+							"value": "origin, access-control-request-method, access-control-request-headers"
+						},
+						{
+							"key": "access-control-allow-credentials",
+							"value": "true"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Registrasi berhasil!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Negatif (email duplikat)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"email\": \"emailsaya@omahti.com\",\r\n        \"password\": \"passwordKuat123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Negatif (email duplikat)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"emailsaya@omahti.com\",\r\n        \"password\": \"passwordKuat123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 21 Nov 2025 13:05:56 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "69"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-proxied-host",
+							"value": "http://10.108.46.209"
+						},
+						{
+							"key": "x-proxied-replica",
+							"value": "efkncdcf-t7xm6"
+						},
+						{
+							"key": "x-proxied-path",
+							"value": "/register"
+						},
+						{
+							"key": "link",
+							"value": "<https://huggingface.co/spaces/bimoar/penugasan-backend>;rel=\"canonical\""
+						},
+						{
+							"key": "x-request-id",
+							"value": "XHV_0E"
+						},
+						{
+							"key": "vary",
+							"value": "origin, access-control-request-method, access-control-request-headers"
+						},
+						{
+							"key": "access-control-allow-credentials",
+							"value": "true"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Gagal mendaftar, email mungkin sudah terdaftar sebelumnya\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Negatif (validasi input)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"email\": \"emailkeduasaya@omahti.com\",\r\n        \"password\": \"123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Negatif (validasi input)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"emailkeduasaya@omahti.com\",\r\n        \"password\": \"123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 21 Nov 2025 13:07:23 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "104"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-proxied-host",
+							"value": "http://10.108.46.209"
+						},
+						{
+							"key": "x-proxied-replica",
+							"value": "efkncdcf-t7xm6"
+						},
+						{
+							"key": "x-proxied-path",
+							"value": "/register"
+						},
+						{
+							"key": "link",
+							"value": "<https://huggingface.co/spaces/bimoar/penugasan-backend>;rel=\"canonical\""
+						},
+						{
+							"key": "x-request-id",
+							"value": "gE99HR"
+						},
+						{
+							"key": "vary",
+							"value": "origin, access-control-request-method, access-control-request-headers"
+						},
+						{
+							"key": "access-control-allow-credentials",
+							"value": "true"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error \": \"Key: 'RegisterInput.Password' Error:Field validation for 'Password' failed on the 'min' tag\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Positif (login sukses)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Ambil token dari response JSON\r",
+							"var jsonData = pm.response.json();\r",
+							"// Simpan ke variable environment \"token\"\r",
+							"pm.collectionVariables.set(\"token\", jsonData.token);"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"email\": \"emailsaya@omahti.com\",\r\n        \"password\": \"passwordKuat123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Positif (login sukses)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"emailsaya@omahti.com\",\r\n        \"password\": \"passwordKuat123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 21 Nov 2025 13:46:43 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "131"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-proxied-host",
+							"value": "http://10.108.138.50"
+						},
+						{
+							"key": "x-proxied-replica",
+							"value": "ipeanxye-qnxs6"
+						},
+						{
+							"key": "x-proxied-path",
+							"value": "/login"
+						},
+						{
+							"key": "link",
+							"value": "<https://huggingface.co/spaces/bimoar/penugasan-backend>;rel=\"canonical\""
+						},
+						{
+							"key": "x-request-id",
+							"value": "VDuNGQ"
+						},
+						{
+							"key": "vary",
+							"value": "origin, access-control-request-method, access-control-request-headers"
+						},
+						{
+							"key": "access-control-allow-credentials",
+							"value": "true"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjM4MTkyMDMsInN1YiI6IjEifQ.S3zV40nC9sprKsJPd1od01SfNPANzyTmcreiOW3Jz60\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Negatif (password salah)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"email\": \"emailsaya@omahti.com\",\r\n        \"password\": \"passwordBerbeda123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Negatif (password salah)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"emailsaya@omahti.com\",\r\n        \"password\": \"passwordBerbeda123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 21 Nov 2025 13:09:47 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "37"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-proxied-host",
+							"value": "http://10.108.46.209"
+						},
+						{
+							"key": "x-proxied-replica",
+							"value": "efkncdcf-t7xm6"
+						},
+						{
+							"key": "x-proxied-path",
+							"value": "/login"
+						},
+						{
+							"key": "link",
+							"value": "<https://huggingface.co/spaces/bimoar/penugasan-backend>;rel=\"canonical\""
+						},
+						{
+							"key": "x-request-id",
+							"value": "uAVTKA"
+						},
+						{
+							"key": "vary",
+							"value": "origin, access-control-request-method, access-control-request-headers"
+						},
+						{
+							"key": "access-control-allow-credentials",
+							"value": "true"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Email atau password salah\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Negatif (email tidak dikenal)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"email\": \"emailtakdikenal@omahti.com\",\r\n        \"password\": \"passwordBerbeda123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Negatif (email tidak dikenal)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"emailtakdikenal@omahti.com\",\r\n        \"password\": \"passwordBerbeda123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 21 Nov 2025 13:10:22 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "37"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-proxied-host",
+							"value": "http://10.108.46.209"
+						},
+						{
+							"key": "x-proxied-replica",
+							"value": "efkncdcf-t7xm6"
+						},
+						{
+							"key": "x-proxied-path",
+							"value": "/login"
+						},
+						{
+							"key": "link",
+							"value": "<https://huggingface.co/spaces/bimoar/penugasan-backend>;rel=\"canonical\""
+						},
+						{
+							"key": "x-request-id",
+							"value": "_ddiaP"
+						},
+						{
+							"key": "vary",
+							"value": "origin, access-control-request-method, access-control-request-headers"
+						},
+						{
+							"key": "access-control-allow-credentials",
+							"value": "true"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Email atau password salah\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Negatif (tanpa token/menyusup)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/me",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"me"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Negatif (tanpa token/menyusup)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/me",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"me"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 21 Nov 2025 13:11:34 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-proxied-host",
+							"value": "http://10.108.46.209"
+						},
+						{
+							"key": "x-proxied-replica",
+							"value": "efkncdcf-t7xm6"
+						},
+						{
+							"key": "x-proxied-path",
+							"value": "/api/me"
+						},
+						{
+							"key": "link",
+							"value": "<https://huggingface.co/spaces/bimoar/penugasan-backend>;rel=\"canonical\""
+						},
+						{
+							"key": "x-request-id",
+							"value": "urzd7G"
+						},
+						{
+							"key": "vary",
+							"value": "origin, access-control-request-method, access-control-request-headers"
+						},
+						{
+							"key": "access-control-allow-credentials",
+							"value": "true"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"invalid authorization format\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Positif (akses resmi)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/me",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"me"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Positif (akses resmi)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/me",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"me"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 21 Nov 2025 13:46:57 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "251"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-proxied-host",
+							"value": "http://10.108.138.50"
+						},
+						{
+							"key": "x-proxied-replica",
+							"value": "ipeanxye-qnxs6"
+						},
+						{
+							"key": "x-proxied-path",
+							"value": "/api/me"
+						},
+						{
+							"key": "link",
+							"value": "<https://huggingface.co/spaces/bimoar/penugasan-backend>;rel=\"canonical\""
+						},
+						{
+							"key": "x-request-id",
+							"value": "xJm5zj"
+						},
+						{
+							"key": "vary",
+							"value": "origin, access-control-request-method, access-control-request-headers"
+						},
+						{
+							"key": "access-control-allow-credentials",
+							"value": "true"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"ini halaman /me\",\n    \"user\": {\n        \"ID\": 1,\n        \"CreatedAt\": \"2025-11-21T13:04:24.397298Z\",\n        \"UpdatedAt\": \"2025-11-21T13:04:24.397298Z\",\n        \"DeletedAt\": null,\n        \"Email\": \"emailsaya@omahti.com\",\n        \"Password\": \"$2a$10$RywiReF9xl9dTgd2X6dK/.gCAEistoTT8qq6IQg5AFWIOOjPeAdj6\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Negatif (token rusak/ngasal)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjM4MTY5MjIsInN1YiI6IjEifQ.yIx4gMUl99OciiIGVlw09VxutolaPiChvPx_-Vi4k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/me",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"me"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Negatif (token rusak/ngasal)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/me",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"me"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 21 Nov 2025 13:16:42 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "103"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-proxied-host",
+							"value": "http://10.108.138.50"
+						},
+						{
+							"key": "x-proxied-replica",
+							"value": "ipeanxye-qnxs6"
+						},
+						{
+							"key": "x-proxied-path",
+							"value": "/api/me"
+						},
+						{
+							"key": "link",
+							"value": "<https://huggingface.co/spaces/bimoar/penugasan-backend>;rel=\"canonical\""
+						},
+						{
+							"key": "x-request-id",
+							"value": "_8Hltf"
+						},
+						{
+							"key": "vary",
+							"value": "origin, access-control-request-method, access-control-request-headers"
+						},
+						{
+							"key": "access-control-allow-credentials",
+							"value": "true"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"token is malformed: could not base64 decode signature: illegal base64 data at input byte 40\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": ""
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}

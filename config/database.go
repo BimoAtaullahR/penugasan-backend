@@ -1,15 +1,14 @@
 package database
 
-import(
+import (
 	"github.com/joho/godotenv"
-	"gorm.io/gorm"
 	"gorm.io/driver/postgres"
+	"gorm.io/gorm"
 	"log"
 	"os"
 )
 
 var DB *gorm.DB
-
 
 func ConnectDatabase() {
 	godotenv.Load()
@@ -19,9 +18,12 @@ func ConnectDatabase() {
 		log.Fatal("Database Url is not set")
 	}
 
-	db, err := gorm.Open(postgres.Open(dbURL), &gorm.Config{})
+	db, err := gorm.Open(postgres.New(postgres.Config{
+		DSN:                  dbURL,
+		PreferSimpleProtocol: true,
+	}), &gorm.Config{})
 
-	if err != nil{
+	if err != nil {
 		log.Fatal("Failed to connect to database")
 	}
 
